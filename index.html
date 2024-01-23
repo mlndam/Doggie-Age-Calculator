@@ -1,0 +1,99 @@
+<!DOCTYPE html> <html><head>
+        <title>Doggie Age Calculator</title>
+    <style>/* 
+1st get the Java Working:
+
+LOOK AND FEEL
+Use you choosen dog sty this page. Every element on your site should have at least 2 css rules.
+
+LAYOUT 
+	Use flex to lay out this site */
+body, result{
+background-color: #b1d3fc;
+    
+  
+}
+
+img{
+
+border-radius: 10%;
+}
+
+
+.sidebar{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+    display: flex;
+      flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+.result{
+    display: flex;
+      flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+
+</style></head>
+    <body>
+  
+  <div class="sidebar"><h1>Doggie Age Calculator 2024</h1>    </div>
+        <div class="image">
+
+      <img src="https://images.wagwalkingweb.com/media/daily_wag/blog_articles/hero/1685787498.877709/fun-facts-about-siberian-huskies-1.png">
+            </div>
+        <br>
+		<div class="box">
+                <input type="text" class="input" value="">
+             <input type="button" class="equals" value="=">
+                <input type="button" class="clear" value=" C ">
+    
+   </div>
+           
+      <div class="result">  </div>
+        
+
+      
+ 
+    
+
+
+
+<script>
+/*__POPCODESTART__*/
+var input = document.querySelector(".input");
+var clearButton = document.querySelector(".clear");
+var equalsButton = document.querySelector(".equals");
+var result = document.querySelector(".result"); // task 1: create a function called calculateDoggieAge with a parameter called humanAge
+
+function calculateDoggieAge(humanAge) {
+  // task 2: declare a doggieAge variable and set it equal to the humanAge parameter multiplied by 7
+  var doggieAge = humanAge * 7; // task 3: print the doggieAge variable to the result div. Put it in string interpolation to have a message that reads "You doggie is _________ years old in human years!"
+
+  result.innerHTML = "Your doggie is ".concat(doggieAge, " years old in human years!");
+}
+
+equalsButton.onclick = function () {
+  // task 4: declare a userInput variable and set it equal to the value of the input. This needs to be a number, not a string! Be sure to place that inside our Number() method!
+  var userInput = input.value; // task 5: call the calculateDoggieAge function. Be sure to include the userInput variable as the parameter!
+
+  calculateDoggieAge(userInput);
+}; //Do Not Touch This Code
+
+
+clearButton.onclick = function () {
+  input.value = "";
+  result.innerHTML = "";
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImlucHV0IiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwiY2xlYXJCdXR0b24iLCJlcXVhbHNCdXR0b24iLCJyZXN1bHQiLCJjYWxjdWxhdGVEb2dnaWVBZ2UiLCJodW1hbkFnZSIsImRvZ2dpZUFnZSIsImlubmVySFRNTCIsIm9uY2xpY2siLCJ1c2VySW5wdXQiLCJ2YWx1ZSJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsS0FBSyxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsUUFBdkIsQ0FBWjtBQUNBLElBQUlDLFdBQVcsR0FBR0YsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQWxCO0FBQ0EsSUFBSUUsWUFBWSxHQUFHSCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsU0FBdkIsQ0FBbkI7QUFDQSxJQUFJRyxNQUFNLEdBQUdKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFiLEMsQ0FFQTs7QUFDQSxTQUFTSSxrQkFBVCxDQUE0QkMsUUFBNUIsRUFBc0M7QUFFcEM7QUFDRSxNQUFJQyxTQUFTLEdBQUdELFFBQVEsR0FBQyxDQUF6QixDQUhrQyxDQU1wQzs7QUFFRkYsRUFBQUEsTUFBTSxDQUFDSSxTQUFQLDRCQUFxQ0QsU0FBckM7QUFFQzs7QUFJREosWUFBWSxDQUFDTSxPQUFiLEdBQXVCLFlBQVc7QUFFaEM7QUFDQSxNQUFJQyxTQUFTLEdBQUdYLEtBQUssQ0FBQ1ksS0FBdEIsQ0FIZ0MsQ0FNaEM7O0FBRUZOLEVBQUFBLGtCQUFrQixDQUFDSyxTQUFELENBQWxCO0FBRUMsQ0FWRCxDLENBY0E7OztBQUNBUixXQUFXLENBQUNPLE9BQVosR0FBc0IsWUFBVztBQUMvQlYsRUFBQUEsS0FBSyxDQUFDWSxLQUFOLEdBQWMsRUFBZDtBQUNBUCxFQUFBQSxNQUFNLENBQUNJLFNBQVAsR0FBbUIsRUFBbkI7QUFFRCxDQUpEIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGlucHV0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5pbnB1dFwiKTtcbmxldCBjbGVhckJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY2xlYXJcIik7XG5sZXQgZXF1YWxzQnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5lcXVhbHNcIik7XG5sZXQgcmVzdWx0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXN1bHRcIik7XG5cbi8vIHRhc2sgMTogY3JlYXRlIGEgZnVuY3Rpb24gY2FsbGVkIGNhbGN1bGF0ZURvZ2dpZUFnZSB3aXRoIGEgcGFyYW1ldGVyIGNhbGxlZCBodW1hbkFnZVxuZnVuY3Rpb24gY2FsY3VsYXRlRG9nZ2llQWdlKGh1bWFuQWdlKSB7XG5cbiAgLy8gdGFzayAyOiBkZWNsYXJlIGEgZG9nZ2llQWdlIHZhcmlhYmxlIGFuZCBzZXQgaXQgZXF1YWwgdG8gdGhlIGh1bWFuQWdlIHBhcmFtZXRlciBtdWx0aXBsaWVkIGJ5IDdcbiAgICBsZXQgZG9nZ2llQWdlID0gaHVtYW5BZ2UqNztcbiAgXG5cbiAgLy8gdGFzayAzOiBwcmludCB0aGUgZG9nZ2llQWdlIHZhcmlhYmxlIHRvIHRoZSByZXN1bHQgZGl2LiBQdXQgaXQgaW4gc3RyaW5nIGludGVycG9sYXRpb24gdG8gaGF2ZSBhIG1lc3NhZ2UgdGhhdCByZWFkcyBcIllvdSBkb2dnaWUgaXMgX19fX19fX19fIHllYXJzIG9sZCBpbiBodW1hbiB5ZWFycyFcIlxuXG5yZXN1bHQuaW5uZXJIVE1MID0gYFlvdXIgZG9nZ2llIGlzICR7ZG9nZ2llQWdlfSB5ZWFycyBvbGQgaW4gaHVtYW4geWVhcnMhYDtcbiAgICBcbn1cblxuXG5cbmVxdWFsc0J1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG5cbiAgLy8gdGFzayA0OiBkZWNsYXJlIGEgdXNlcklucHV0IHZhcmlhYmxlIGFuZCBzZXQgaXQgZXF1YWwgdG8gdGhlIHZhbHVlIG9mIHRoZSBpbnB1dC4gVGhpcyBuZWVkcyB0byBiZSBhIG51bWJlciwgbm90IGEgc3RyaW5nISBCZSBzdXJlIHRvIHBsYWNlIHRoYXQgaW5zaWRlIG91ciBOdW1iZXIoKSBtZXRob2QhXG4gIGxldCB1c2VySW5wdXQgPSBpbnB1dC52YWx1ZTtcblxuICAgIFxuICAvLyB0YXNrIDU6IGNhbGwgdGhlIGNhbGN1bGF0ZURvZ2dpZUFnZSBmdW5jdGlvbi4gQmUgc3VyZSB0byBpbmNsdWRlIHRoZSB1c2VySW5wdXQgdmFyaWFibGUgYXMgdGhlIHBhcmFtZXRlciFcblxuY2FsY3VsYXRlRG9nZ2llQWdlKHVzZXJJbnB1dCk7XG4gICAgXG59O1xuXG5cblxuLy9EbyBOb3QgVG91Y2ggVGhpcyBDb2RlXG5jbGVhckJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gIGlucHV0LnZhbHVlID0gXCJcIjtcbiAgcmVzdWx0LmlubmVySFRNTCA9IFwiXCI7XG5cbn07XG4iXX0=</script></body></html>
