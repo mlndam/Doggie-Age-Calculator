@@ -1,0 +1,45 @@
+/* 
+1st get the Java Working:
+
+LOOK AND FEEL
+Use you choosen dog sty this page. Every element on your site should have at least 2 css rules.
+
+LAYOUT 
+	Use flex to lay out this site */
+body, result{
+background-color: #b1d3fc;
+    
+  
+}
+
+img{
+
+border-radius: 10%;
+}
+
+
+.sidebar{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+    display: flex;
+      flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+.result{
+    display: flex;
+      flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+
